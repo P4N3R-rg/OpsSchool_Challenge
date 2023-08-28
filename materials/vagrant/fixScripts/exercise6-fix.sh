@@ -30,8 +30,6 @@ for ((i = 1; i <= $# - 1; i++)); do
 
     # Check if the source file exists
     if [ -f "$src_file" ]; then
-        # Get the filename from the path
-        filename=$(basename "$src_file")
         # Copy the file to the destination folder on the other server
         ssh "$dest_server" "sudo scp $src_file $dest_folder"
         echo "'$src_file' copied to '$dest_server:$dest_folder'"
